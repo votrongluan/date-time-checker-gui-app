@@ -56,7 +56,14 @@ def check_date(day, month, year):
     if not date_range['status']:
         return date_range
 
+    if int(day) < 10:
+        day = f"0{day}"
+    if int(month) < 10:
+        month = f"0{month}"
+
+    formatted_date = f"{day}/{month}/{year}"
+
     if is_valid_date(day, month, year):
-        return {'message': f"{day}/{month}/{year} is a correct date time!", 'status': True}
+        return {'message': f"{formatted_date} is a correct date time!", 'status': True}
     else:
-        return {'message': f"{day}/{month}/{year} is an incorrect date time!", 'status': False}
+        return {'message': f"{formatted_date} is an incorrect date time!", 'status': False}
