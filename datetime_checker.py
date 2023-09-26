@@ -5,19 +5,16 @@ def is_correct_format(day, month, year):
     try:
         day = int(day)
     except ValueError:
-        messagebox.showerror("Error", "Input data for Day is incorrect format!")
         return {'message': f"Input data for Day is incorrect format!", 'status': False}
 
     try:
         month = int(month)
     except ValueError:
-        messagebox.showerror("Error", "Input data for Month is incorrect format!")
         return {'message': f"Input data for Month is incorrect format!", 'status': False}
 
     try:
         year = int(year)
     except ValueError:
-        messagebox.showerror("Error", "Input data for Year is incorrect format!")
         return {'message': f"Input data for Year is incorrect format!", 'status': False}
 
     return {'message': f"Input data is correct format!", 'status': True}
